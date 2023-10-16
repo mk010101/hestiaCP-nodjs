@@ -303,3 +303,40 @@ To connect to your HestiaCP panel, access https://host_name:8083 with the userna
 Once inside the Hestia panel, go to **WEB** and click on the domain where you want to use the Node.js template.
 
 In the “NGINX Proxy Support” section, click on the dropdown that shows “default” (the default option) and select either “nodejs3000” or “nodejssock” depending on your project’s requirements.
+
+# pm2
+
+pm2 is node app manager.
+https://pm2.keymetrics.io/docs/usage/quick-start/
+
+To start an app: `pm2 start myApp.js`
+
+### Config
+
+pm2.config.js:
+
+```js
+module.exports = {
+  apps: [
+    {
+      name: "api 1",
+      script: "web/api.my-server.tld/public_html/dist/app.js",
+      watch: true,
+      ignore_watch: ["node_modules"],
+      //args: "limit",
+    },
+  ],
+};
+```
+
+Start with config: `pm2 start pm2.config.js`
+
+Watch mode: `pm2 start pm2.config.js --watch`
+
+Auto start: `pm2 startup`
+
+To disable and remove the current startup configuration: `pm2 unstartup`
+
+# PostgreSQL
+
+To login as admin: `sudo su - postgres`
