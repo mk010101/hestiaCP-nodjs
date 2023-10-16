@@ -4,10 +4,32 @@ By default, HestiaCP does not include support for publishing applications develo
 
 ### Installing Node.js:
 
-HestiaCP’s pre-installed image already comes with Node.js, but you’ll need to install npm to manage your Node.js applications. Execute the following command:
+`sudo apt install -y curl`
 
-[optional]
-apt `install npm`
+1. Download and import the Nodesource GPG key
+
+```bash
+sudo apt-get update
+sudo apt-get install -y ca-certificates curl gnupg
+sudo mkdir -p /etc/apt/keyrings
+curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg
+```
+
+2. Create deb repository
+
+```bash
+NODE_MAJOR=20
+echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_$NODE_MAJOR.x nodistro main" | sudo tee /etc/apt/sources.list.d/nodesource.list
+```
+
+3. Update and install
+
+```bash
+sudo apt-get update
+sudo apt-get install nodejs -y
+```
+
+HestiaCP’s pre-installed image already comes with Node.js, but you’ll need to install npm to manage your Node.js applications. Execute the following command:
 
 ## There are 2 methods:
 
@@ -340,3 +362,9 @@ To disable and remove the current startup configuration: `pm2 unstartup`
 # PostgreSQL
 
 To login as admin: `sudo su - postgres`
+
+# Change SSH port
+
+`sudo nano /etc/ssh/sshd_config`
+
+Uncomment #Port and change.
