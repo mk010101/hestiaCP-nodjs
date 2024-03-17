@@ -363,6 +363,10 @@ To disable and remove the current startup configuration: `pm2 unstartup`
 
 To login as admin: `sudo su - postgres`
 
+Or
+
+psql -U postgres
+
 As user (when in `psql`): `-d db_name -U user_name`
 
 # Change SSH port
