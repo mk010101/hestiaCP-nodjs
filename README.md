@@ -365,7 +365,7 @@ To login as admin: `sudo su - postgres`
 
 Or
 
-psql -U postgres
+`psql -U postgres`
 
 As user (when in `psql`): `-d db_name -U user_name`
 
