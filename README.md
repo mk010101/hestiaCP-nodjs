@@ -361,7 +361,7 @@ To disable and remove the current startup configuration: `pm2 unstartup`
 
 # PostgreSQL
 
-To login as admin: `sudo su - postgres`
+To login as admin: `sudo -u postgres psql`
 
 Or
 
