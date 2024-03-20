@@ -369,9 +369,16 @@ Or
 
 As user (when in `psql`): `-d db_name -U user_name`
 
-Save:
+### Backup:
 
 `pg_dump -U db_user -d db_name -F tar -f ~/db-dump.tar --no-owner`
+
+### If hestia control panel won't let you create/change db (localhost connection error):
+
+* get current user `postres` password: sudo nano /usr/local/hestia/conf/pgsql.conf
+* copy-paste password
+* change `postgres` user password: `ALTER USER postgres WITH PASSWORD ‘new-password’;`
+
 
 # Change SSH port
 
