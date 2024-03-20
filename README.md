@@ -377,8 +377,9 @@ As user (when in `psql`): `-d db_name -U user_name`
 
 * get current user `postres` password: sudo nano /usr/local/hestia/conf/pgsql.conf
 * copy-paste password
-* change `postgres` user password: `ALTER USER postgres WITH PASSWORD ‘new-password’;`
+* change `postgres` user password: psql `ALTER USER postgres WITH PASSWORD ‘new-password’;`
 
+`sudo service postgresql restart`
 
 # Change SSH port
 
