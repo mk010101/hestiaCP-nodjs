@@ -369,6 +369,10 @@ Or
 
 As user (when in `psql`): `-d db_name -U user_name`
 
+Or
+
+`psql -d database -U username -h 127.0.0.1`
+
 ### Backup:
 
 `pg_dump -U db_user -d db_name -F tar -f ~/db-dump.tar --no-owner`
