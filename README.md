@@ -342,7 +342,9 @@ module.exports = {
   apps: [
     {
       name: "api 1",
-      script: "web/api.my-server.tld/public_html/dist/app.js",
+      script: "/web/api.my-server.tld/public_html/dist/app.js",
+      // Add cwd for pm2 to get dotenv vars
+      cwd: "/web/api.my-server.tld/public_html/dist/",
       watch: true,
       ignore_watch: ["node_modules"],
       //args: "limit",
