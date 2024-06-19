@@ -108,6 +108,7 @@ error_log /var/log/%web_system%/domains/%domain%.error.log error;
     }
 
     include %home%/%user%/conf/web/nginx.%domain%.conf*;
+    include %home%/%user%/conf/web/%domain%/nginx.conf_*;
 
 }
 ```
@@ -167,7 +168,7 @@ gzip_vary on;
     }
 
     include %home%/%user%/conf/web/s%proxy_system%.%domain%.conf*;
-
+    include %home%/%user%/conf/web/%domain%/nginx.ssl.conf_*;
 }
 ```
 
