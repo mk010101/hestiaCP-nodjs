@@ -171,6 +171,7 @@ gzip_vary on;
     include %home%/%user%/conf/web/%domain%/nginx.ssl.conf_*;
 }
 ```
+After that, rebuild the domain: `v-rebuild-web-domain userName my.domain.tld`.
 
 ## Method2
 
