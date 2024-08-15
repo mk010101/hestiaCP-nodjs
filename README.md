@@ -333,7 +333,7 @@ In the “NGINX Proxy Support” section, click on the dropdown that shows “de
 pm2 is node app manager.
 https://pm2.keymetrics.io/docs/usage/quick-start/
 
-To start an app: `pm2 start myApp.js`
+To start an app: `pm2 start myApp.js --update-env`
 
 ### Config
 
