@@ -363,38 +363,3 @@ Auto start: `pm2 startup`
 
 To disable and remove the current startup configuration: `pm2 unstartup`
 
-# PostgreSQL
-
-To login as admin: `sudo -u postgres psql`
-
-Or
-
-`psql -U postgres`
-
-As user (when in `psql`): `-d db_name -U user_name`
-
-Or
-
-`psql -d database -U username -h 127.0.0.1`
-
-### Backup:
-Plain text: `pg_dump -h localhost -U db_user db_name -Fc > my_dump.txt -F p`
-
-SQL: `pg_dump -h localhost -U db_user db_name -Fc > my_dump.sql`
-
-
-### Restore:
-`pg_restore -i -h localhost -U db_user -d db_name -v dbname.sql`
-
-
-### If hestia control panel won't let you create/change db (localhost connection error):
-* get current user `postres` password: sudo nano /usr/local/hestia/conf/pgsql.conf
-* copy password
-* change `postgres` user password: psql `ALTER USER postgres WITH PASSWORD ‘new-password’;`
-
-`sudo service postgresql restart`
-
-# Change SSH port
-`sudo nano /etc/ssh/sshd_config`
-
-Uncomment #Port and change.
